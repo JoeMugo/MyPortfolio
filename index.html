@@ -142,17 +142,25 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js"></script>
+    <!-- Three.js Library (with fallback) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r160/three.min.js" 
+            onerror="console.error('Failed to load Three.js from CDN'); this.src='https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js'"></script>
+    
+    <!-- Portfolio Scripts -->
     <script src="js/data.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/terminal.js"></script>
     <script src="js/commands.js"></script>
-    <script src="js/scene.js"></script>
-    <script src="js/room.js"></script>
-    <script src="js/lighting.js"></script>
-    <script src="js/interactions.js"></script>
-    <script src="js/particles.js"></script>
-    <script src="js/effects.js"></script>
-    <script src="js/main.js"></script>
+    
+    <!-- 3D Scene Scripts (load after Three.js) -->
+    <script src="js/scene.js" defer></script>
+    <script src="js/room.js" defer></script>
+    <script src="js/lighting.js" defer></script>
+    <script src="js/interactions.js" defer></script>
+    <script src="js/particles.js" defer></script>
+    <script src="js/effects.js" defer></script>
+    
+    <!-- Main App (load last) -->
+    <script src="js/main.js" defer></script>
 </body>
 </html>

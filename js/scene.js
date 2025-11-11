@@ -4,6 +4,12 @@
 
 class Scene3D {
     constructor() {
+        // Check if THREE.js is loaded
+        if (typeof THREE === 'undefined') {
+            console.error('THREE.js is not loaded! Please check your internet connection or CDN link.');
+            return;
+        }
+        
         this.scene = null;
         this.camera = null;
         this.renderer = null;
