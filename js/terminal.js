@@ -73,7 +73,7 @@ class Terminal {
         this.historyIndex = this.commandHistory.length;
         
         // Display command
-        this.writeLine(`<span class="terminal-prompt">guest@portfolio:~$</span> ${command}`, 'command');
+        this.writeLine(`<span class="terminal-prompt">joelmugo@portfolio:~$</span> ${command}`, 'command');
         
         // Execute command
         if (Commands[command]) {

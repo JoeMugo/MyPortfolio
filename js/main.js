@@ -134,9 +134,11 @@ class PortfolioApp {
     }
 
     showWelcomeMessage() {
-        // Optional: Add any additional welcome animations or messages
-        console.log('%c Welcome to my Portfolio! ', 'background: #00ffff; color: #000; font-size: 20px; padding: 10px;');
-        console.log('%c Type "help" in the terminal to get started! ', 'background: #00ff00; color: #000; font-size: 14px; padding: 5px;');
+        // Welcome message for recruiters and visitors
+        console.log('%c 👋 Joel Mugo - Full-Stack Software Developer ', 'background: #00ffff; color: #000; font-size: 20px; padding: 10px; font-weight: bold;');
+        console.log('%c 💼 ASP.NET Core | C# | JavaScript | SQL Server ', 'background: #00ff00; color: #000; font-size: 14px; padding: 5px;');
+        console.log('%c 📧 joelmugo254@gmail.com | 📱 +254 705 483 231 ', 'background: #ff00ff; color: #fff; font-size: 12px; padding: 5px;');
+        console.log('%c Type "help" to explore my portfolio! ', 'background: #ffff00; color: #000; font-size: 14px; padding: 5px;');
     }
 }
 
