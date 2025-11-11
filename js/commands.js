@@ -130,10 +130,15 @@ const Commands = {
 
     // Resume command
     resume: (terminal) => {
-        terminal.writeSuccess(`Downloading resume...`);
-        terminal.writeInfo(`Resume download initiated. Check your downloads folder.`);
-        // In a real scenario, this would trigger a download
-        // window.location.href = portfolioData.social.resume;
+        terminal.writeSuccess(`📄 Downloading Joel Mugo's Resume...`);
+        // Trigger actual download
+        const link = document.createElement('a');
+        link.href = portfolioData.social.resume;
+        link.download = 'Joel_Mugo_Resume_2025.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        terminal.writeSuccess(`✅ Resume download started! Check your downloads folder.`);
     },
 
     // Clear command

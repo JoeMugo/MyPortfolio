@@ -129,6 +129,34 @@ class Terminal {
         line.className = className;
         line.innerHTML = content;
         this.output.appendChild(line);
+        // Auto-scroll to bottom
+        this.scrollToBottom();
+    }
+    
+    scrollToBottom() {
+        // Smooth scroll to bottom of terminal
+        this.output.scrollTop = this.output.scrollHeight;
+    }
+    
+    async writeLineTyping(content, className = '', speed = 20) {
+        const line = document.createElement('div');
+        line.className = className;
+        this.output.appendChild(line);
+        
+        // Type out the content character by character
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = content;
+        const text = tempDiv.textContent || tempDiv.innerText;
+        
+        for (let i = 0; i < text.length; i++) {
+            line.textContent = text.substring(0, i + 1);
+            this.scrollToBottom();
+            await new Promise(resolve => setTimeout(resolve, speed));
+        }
+        
+        // Set final HTML content (preserves formatting)
+        line.innerHTML = content;
+        this.scrollToBottom();
     }
 
     write(content) {
